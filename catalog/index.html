@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Page</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@1&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <section class="catalog">
+      <h2 class="noto-sans-h2" id="catalog-title">Каталог</h2>
+      <h2 class="noto-sans-h2" id="search-results-title" style="display: none;">Результати пошуку </h2>
+
+
+      <div class="filters">
+        <div class="filters-wrap-title">
+          <div>
+            <p class="noto-sans-dd-title">Фільтри</p>
+          </div>
+          <button id="close-filters">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+              <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="filters-wrap">
+          <div class="filters-btns-wrap">
+            <!-- Тип товара: чекбоксы -->
+            <button class="filters-wrap-button" data-filter-group-id="filter-group-category">
+              <div>
+                <p class="noto-sans-item-details-content">Категорія</p>
+                <span class="outfit-item-size filters-wrap-button-choice"></span>
+              </div>
+              <img src="/img/arrow.svg" alt="">
+            </button>
+            <button class="filters-wrap-button" data-filter-group-id="filter-group-brand">
+              <div>
+                <p class="noto-sans-item-details-content">Бренд</p>
+                <span class="outfit-item-size filters-wrap-button-choice"></span>
+              </div>
+              <img src="/img/arrow.svg" alt="">
+            </button>
+            <button class="filters-wrap-button" data-filter-group-id="filter-group-size">
+              <div>
+                <p class="noto-sans-item-details-content">Розмір</p>
+                <span class="outfit-item-size filters-wrap-button-choice"></span>
+              </div>
+              <img src="/img/arrow.svg" alt="">
+            </button>
+            <button class="filters-wrap-button" data-filter-group-id="filter-group-color">
+              <div>
+                <p class="noto-sans-item-details-content">Колір</p>
+                <span class="outfit-item-size filters-wrap-button-choice"></span>
+              </div>
+              <img src="/img/arrow.svg" alt="">
+            </button>
+            <button class="filters-wrap-button" data-filter-group-id="filter-group-price">
+              <div>
+                <p class="noto-sans-item-details-content">Ціна</p>
+                <span class="outfit-item-size filters-wrap-button-choice"></span>
+              </div>
+              <img src="/img/arrow.svg" alt="">
+            </button>
+          </div>
+          <div class="filters-btns">
+            <button id="reset-filters" class="noto-sans-dd">Скинути всі</button>
+            <button id="apply-all-btn" class="noto-sans-dd animated">Застосувати все фильтры</button>
+          </div>
+        </div>
+
+
+
+        <!-- Категория -->
+
+      </div>
+
+      <div class="filter-group" id="filter-group-category">
+        <div class="filters-wrap-title">
+          <div>
+            <p class="noto-sans-dd-title">Категорія</p>
+          </div>
+          <button class="close-filter-group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+              <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+        <div id="filter-type-group" class="filter-group-choice-wrap">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="tee" />
+            <span class="checkmark"></span>
+            Футболки
+          </label><br />
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="tank" />
+            <span class="checkmark"></span>
+            Майки
+          </label><br />
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="shorts" />
+            <span class="checkmark"></span>
+            Шорти
+          </label>
+        </div>
+        <button id="apply-type-btn" class="apply-filter-btn animated">Застосувати</button>
+      </div>
+
+      <!-- Бренд -->
+      <div class="filter-group" id="filter-group-brand">
+        <div class="filters-wrap-title">
+          <div>
+            <p class="noto-sans-dd-title">Бренд</p>
+          </div>
+          <button class="close-filter-group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+              <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+        <div id="filter-brand-group" class="filter-group-choice-wrap">
+          <!-- Бренды будут добавляться динамически, но имей в виду, что createCheckbox должен тоже использовать custom-checkbox -->
+        </div>
+        <button id="apply-brand-btn" class="apply-filter-btn animated">Застосувати</button>
+      </div>
+
+      <!-- Размер -->
+      <div class="filter-group" id="filter-group-size">
+        <div class="filters-wrap-title">
+          <div>
+            <p class="noto-sans-dd-title">Розмір</p>
+          </div>
+          <button class="close-filter-group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+              <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+        <div id="filter-size-group" class="filter-group-choice-wrap">
+          <!-- Размеры добавляются динамически -->
+        </div>
+        <button id="apply-size-btn" class="apply-filter-btn animated">Застосувати</button>
+      </div>
+
+      <!-- Цвет -->
+      <div class="filter-group" id="filter-group-color">
+        <div class="filters-wrap-title">
+          <div>
+            <p class="noto-sans-dd-title">Колір</p>
+          </div>
+          <button class="close-filter-group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+              <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+        <div id="filter-color-group" class="filter-group-choice-wrap">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="color" value="white" />
+            <span class="checkmark"></span>
+            Білий
+          </label><br />
+          <label class="custom-checkbox">
+            <input type="checkbox" name="color" value="black" />
+            <span class="checkmark"></span>
+            Чорний
+          </label><br />
+          <label class="custom-checkbox">
+            <input type="checkbox" name="color" value="yellow" />
+            <span class="checkmark"></span>
+            Жовтий
+          </label><br />
+          <label class="custom-checkbox">
+            <input type="checkbox" name="color" value="red" />
+            <span class="checkmark"></span>
+            Червоний
+          </label>
+        </div>
+        <button id="apply-color-btn" class="apply-filter-btn animated">Застосувати</button>
+      </div>
+
+      <!-- Цена (не требует чекбоксов, оставляем как есть) -->
+      <div class="filter-group" id="filter-group-price">
+        <div class="filters-wrap-title">
+          <div>
+            <p class="noto-sans-dd-title">Ціна</p>
+          </div>
+          <button class="close-filter-group">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="4" y1="4" x2="20" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+              <line x1="20" y1="4" x2="4" y2="20" stroke="black" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="price-filter">
+          <div class="outfit-item-title">
+            <span id="price-min-value">0 ₴</span> — <span id="price-max-value">10000 ₴</span>
+          </div>
+          <div class="double-range-slider filter-group-choice-wrap" id="doubleRangeSlider">
+            <div id="sliderRange" class="slider-range"></div>
+            <div id="thumbMin" class="slider-thumb"></div>
+            <div id="thumbMax" class="slider-thumb"></div>
+          </div>
+          <button id="apply-price-btn" class="apply-filter-btn animated">Застосувати</button>
+        </div>
+
+      </div>
+
+      <div class="filters-header">
+        <button class="filters-button" id="filters-button">
+          <img src="/img/filter.svg" alt="">
+          <p class="noto-sans-dd">Фільтри</p>
+          <div id="filters-button-amount">
+            <span></span>
+          </div>
+        </button>
+        <div class="custom-select noto-sans-dd" id="sort-price">
+          <div class="selected-option" data-value="">
+            <p>За популярністю</p>
+            <img src="/img/arrow.svg" alt="">
+          </div>
+          <div class="options-list" style="display: none;">
+            <div class="option" data-value="">За популярністю</div>
+            <div class="option" data-value="asc">Ціна за зростанням</div>
+            <div class="option" data-value="desc">Ціна за спаданням</div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- Карточки товаров -->
+      <div class="cards-container">
+
+      </div>
+      <p id="no-products-msg" style="display:none;">Немає товарів за вибраними фільтрами.</p>
+    </section>
+  </main>
+
+  <script src="/header_footer.js"></script>
+  <script type="module" src="/catalog.js"></script>
+</body>
+
+</html>

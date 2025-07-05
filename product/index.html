@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section class="item">
+            <div class="item-img-wrap"></div>
+            <div class="item-info-wrap">
+                <span class="ready-deliver noto-sans-item-details-content">Готове до відправлення</span>
+                <h1 class="clash-grotesk-item-title" id="item-title"></h1>
+                <p class="outfit-item-price" id="item-price"></p>
+                <p class="outfit-item-size" id="item-sizes"></p>
+                <button class="main-btn noto-sans-header animated">Придбати</button>
+                <div class="item-details-wrap">
+                    <div class="item-details">
+                        <div class="item-details-title noto-sans-item-details-title">
+                            <p>Заміри</p>
+                            <img src="/img/arrow.svg" alt="">
+                        </div>
+                        <div class="item-details-content noto-sans-item-details-content">
+                            <table id="sizes-tee" class="sizes-table" style="display:none;">
+                                <tr>
+                                    <th></th>
+                                    <th>Довжина</th>
+                                    <th>Обхват грудей</th>
+                                    <th>Ширина плечей</th>
+                                </tr>
+                            </table>
+
+                            <table id="sizes-shorts" class="sizes-table" style="display:none;">
+                                <tr>
+                                    <th></th>
+                                    <th>Довжина</th>
+                                    <th>Талія</th>
+                                    <th>Стегна</th>
+                                </tr>
+                            </table>
+
+                            <table id="sizes-tank" class="sizes-table" style="display:none;">
+                                <tr>
+                                    <th></th>
+                                    <th>Довжина</th>
+                                    <th>Ширина</th>
+                                    <th>Плечі</th>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-details-title noto-sans-item-details-title">
+                            <p>Як замовити</p>
+                            <img src="/img/arrow.svg" alt="">
+                        </div>
+                        <div class="item-details-content noto-sans-item-details-content">
+                            <p>На даний момент усі замовлення приймаються виключно через <a
+                                    href="https://t.me/kirito_ls" target="_blank">Telegram</a> або в <a
+                                    href="https://www.instagram.com/kirito_sneakers?igsh=MTB1bzNheTJoaXZvMg%3D%3D&amp;utm_source=qr"
+                                    target="_blank">директ Instagram</a>.</p>
+                        </div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-details-title noto-sans-item-details-title">
+                            <p>Доставка</p>
+                            <img src="/img/arrow.svg" alt="">
+                        </div>
+                        <div class="item-details-content noto-sans-item-details-content">
+                            <p>Безкоштовна доставка по всьому світу.</p><br>
+                            <p>Доставка до відділення Нової пошти в Україні — від 70 грн.</p><br>
+                            <p>Оформлення замовлення триває від 12 до 14 робочих днів.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="same-products-container">
+            <h2 class="noto-sans-h2">Інші кольори цієї моделі</h2>
+            <div class="cards-container" id="another-colors"></div>
+        </section>
+
+        <section class="like-products-container">
+            <h2 class="noto-sans-h2">Вам може сподобатись</h2>
+            <div class="cards-container" id="another-colors"></div>
+        </section>
+
+    </main>
+    <script src="/acordeon.js"></script>
+    <script src="/header_footer.js"></script>
+    <script type="module" src="/script.js"></script>
+</body>
+
+</html>
